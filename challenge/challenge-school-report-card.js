@@ -1,21 +1,18 @@
-let nilaitugaas = 85;
-let nilaiUts = 90;
-let nilaiUas = 100;
-let grade = '';
+let nilai = { Tugas: 85, UTS: 90, UAS: 100 };
+const nilaiAkhir = 0.25 * nilai.Tugas + 0.3 * nilai.UTS + 0.45 * nilai.UAS;
+let grade = "";
 
-let totalNilai = (nilaitugaas/100*25) + (nilaiUts/100*30) + (nilaiUas/100*45);
-
-if(totalNilai > 100 || totalNilai < 0 ){
-    console.log('nilai tidak valid');
-}else if(totalNilai >= 80){
-    grade = 'A';
-}else if(totalNilai >= 70){
-    grade = 'B';
-}else if(totalNilai >= 55){
-    grade = 'C';
-}else if(totalNilai >= 40){
-    grade = 'D';
-}else{
-    grade = 'E';
+if (nilaiAkhir < 0 || nilaiAkhir > 100) {
+  grade = "nilai tidak sesuai";
+} else if (nilaiAkhir >= 80) {
+  grade = "A";
+} else if (nilaiAkhir >= 70) {
+  grade = "B";
+} else if (nilaiAkhir >= 55) {
+  grade = "C";
+} else if (nilaiAkhir >= 40) {
+  grade = "D";
+} else {
+  grade = "E";
 }
-console.log(`Nilai ${totalNilai} dengan hasil akhir adalah ${grade}`)
+console.log(`Nilai ${nilaiAkhir} dengan hasil akhir adalah ${grade}.`);

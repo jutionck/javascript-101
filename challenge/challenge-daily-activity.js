@@ -1,31 +1,26 @@
-let time = 3;
+let jam = "11";
+let jadwal = "";
 
-if (typeof time == 'string') {
+let validasiNumber = typeof jam === "number" ? true : false;
 
-    console.log('Nilai yang di masukkan hanya boleh angka')
-
-}else if(time > 24 ){
-
-    console.log('Hanya ada 24 jam dalam sehari')
+if (validasiNumber) {
+  if (jam > 24) {
+    jadwal = "Hanya ada 24 jam dalam sehari";
+  } else if (jam < 0) {
+    jadwal = "Angka Tidak Boleh Negatif";
+  } else if (jam >= 4 && jam <= 5) {
+    jadwal = "Bangun Pagi";
+  } else if (jam >= 6 && jam <= 7) {
+    jadwal = "Mandi dan sarapan";
+  } else if (jam >= 8 && jam <= 11) {
+    jadwal = "Berangkat Sekolah";
+  } else if (jam === 12) {
+    jadwal = "Pulang Sekolah";
+  } else {
+    jadwal = "Waktu bebas dan istirahat";
+  }
+} else {
+  jadwal = "Nilai yang di masukkan hanya boleh angka";
 }
-else if (time < 0) {
 
-    console.log('Angka Tidak Boleh Negatif')
-
-} else if(time >= 4 && time < 6){
-
-    console.log('Bangun Pagi')
-
-}else if(time >= 6 && time < 8 ){
-
-    console.log('Mandi dan Sarapan')
-
-}else if(time >= 8 && time < 12){
-
-    console.log('Berangkat Sekolah')
-
-}else if (time == 12) {
-    console.log('Pulang Sekolah');
-}else{
-    console.log('Waktu bebas dan istirahat');
-}
+console.log(jadwal);

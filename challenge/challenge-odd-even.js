@@ -1,23 +1,18 @@
-const num2 = 1;
-let odd=Number('');
-let oddarray=[];
-for(let c=0;c<num2;c++){
-    if(c%2==1){
-        odd=odd+c;
-        oddarray.push(c);
-    }
-}
-let listodd=oddarray.join(" + ");
+const input = 5;
+let genap = [];
+let ganjil = [];
+let totalGenap = 0;
+let totalGanjil = 0;
 
-let even=Number('');
-let evenarray=[];
-for(let h=1;evenarray.length<num2;h++){
-    if(h%2==0){
-        even=even+h;
-        evenarray.push(h);
-    }
+for (let i = 1; i <= input * 2; i++) {
+  if (i % 2 == 0) {
+    genap.push(i);
+    totalGenap += i;
+  } else if (i % 2 != 0 && i < input) {
+    ganjil.push(i);
+    totalGanjil += i;
+  }
 }
-let listeven=evenarray.join(" + ");
 
-console.log(`Hasil penjumlahan bilangan ganjil : ${listodd} = ${odd}`);
-console.log(`Hasil penjumlahan bilangan genap : ${listeven} = ${even}`);
+console.log(`Ganjil : ${ganjil.join(" + ")} = ${totalGanjil}`);
+console.log(`Genap : ${genap.join(" + ")} = ${totalGenap}`);
