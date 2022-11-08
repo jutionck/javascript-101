@@ -1,3 +1,40 @@
+const student = {
+  id: 1,
+  name: 'Bulan',
+  age: 16,
+  isGraduate: false,
+  address: {
+    city: 'Dewata',
+    province: 'Bali'
+  }
+}
+
+function getInfo(address) {
+  const job = this.isGraduate ? 'Programmer' : 'Waiting Graduate';
+  console.log(`${this.name} is in status ${job}`);
+  console.log(this.address);
+  console.log(this.address.city);
+  console.log(`My address is ${address.city}, ${address.province}`); // error
+}
+
+// getInfo(); // undefined
+// kita harus menggunakan method bawaan nya dahulu bisa menggunakan 'call' atau 'apply'
+getInfo.bind(student)(student.address);
+getInfo.bind(student)([student.address]);
+// info();
+// getInfo.apply(student, [student.address]); // cara kirim argumen menggunakan apply harus []
+
+// student.getInfo();
+// const otherStudent = {
+//   id: 1,
+//   major: 'Teknik Informatika'
+// }
+
+// // otherStudent = student; // ERROR
+// otherStudent.__proto__ = student; // cara untuk mengambil object yang sudah ada, goal: menjadi nested object
+// console.log(otherStudent);
+// otherStudent.getInfo();
+
 // Mencetak mahasiswa yang tidak ada kelas
 // const absent = [
 //     {
@@ -106,19 +143,19 @@
 // const studentValue = Object.values(student);
 // console.log(studentValue);
 
-const car = {
-    name: 'terrios',
-    color: 'white',
-    seats: {
-        count: 4,
-        type: 'leather'
-    }
-}
-const newCar = {...car, seats: {...car.seats}}
-newCar.name = 'Avanza';
-newCar.color = 'black';
-newCar.seats.type = 'plastic';
+// const car = {
+//     name: 'terrios',
+//     color: 'white',
+//     seats: {
+//         count: 4,
+//         type: 'leather'
+//     }
+// }
+// const newCar = {...car, seats: {...car.seats}}
+// newCar.name = 'Avanza';
+// newCar.color = 'black';
+// newCar.seats.type = 'plastic';
 
-console.log(`newCar:${JSON.stringify(newCar)}`)
-console.log('car:',car)
+// console.log(`newCar:${JSON.stringify(newCar)}`)
+// console.log('car:',car)
 
