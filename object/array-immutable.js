@@ -5,3 +5,15 @@ nums[3][0] = 1; // ini pasti akan berubah, solusinya sebenernya sama seperti nes
 
 console.log('numbers', numbers);
 console.log('nums', nums);
+
+// Destructuring Array
+let enigma = 'Camp';
+let camp = 'Enigma';
+
+// Sebelum
+console.log(enigma, camp);
+
+[enigma, camp] = [camp, enigma];
+
+// Setelah
+console.log(enigma, camp);
