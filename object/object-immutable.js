@@ -52,3 +52,8 @@ students03.name = 'Marina';
 students03.address.city = 'Banten Kota';
 console.log(students); // city tidak berubah
 console.log(students03);
+
+// Delete properti
+delete students03.address;
+console.log(students);
+console.log(students03);
